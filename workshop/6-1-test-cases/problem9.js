@@ -11,14 +11,22 @@ let verifyEquals = require('../../assets/verify-equals');
 // HINTS: 
 //    - You'll need to use the split string method
 //    - A for loop might be helpful
+// function f(str) {
+// let max = str[0].lenth;
+// str.map(v => max = Math.max(max, v.length));
+// let result = str.filter(v.length == max);
+// return result
+// }
+
+// it keeps saying str.split is not a function... //
 
 function f(str) {
-
+    return str.split('').reduce((acc, curr) => (acc.length < curr.length ? curr : acc), '');
 }
 
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = [["this is really"], ["hard to understand"], ["I feel hopeless"], ["Im still trying"], ["lol fuck me"]];
+let outputs = ["really", "understand", "hopeless", "trying", "fuck"];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.

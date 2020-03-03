@@ -18,7 +18,26 @@ is a variable in function, or method, definition.
 
 ```js
 // Example
+function greeting(name) {  // here we defined function
+    return `${name}! want some bacon?`;
+}
+greeting("daniel");  // here you CALL the function
 
+// alternative: 
+
+function greeting(names) {
+    names.forEach(function(name) {
+        console.log(`${name}! want some bacon?`);
+    });
+}
+greeting(['daniel', 'bob', 'clara']); 
+
+function greeting(names) {
+    return names.map(function(name) {
+        return`${name}! want some bacon?`;
+    });
+}
+console.log((greeting(['daniel', 'bob', 'clara'])));
 ```
 
 ---
@@ -43,7 +62,7 @@ function f() {
 
 f("bye");
 ```
-
+<!-- (the output is hello) -->
 ---
 
 --> Extra arguments are ignored.
@@ -90,10 +109,12 @@ This will _define_ a function expression.
 The third way is an arrow function
 
 ```js
-someFunc = () => {
+someFunc = (num1, num2) => {
     // do something...
 }
 ```
+names.forEach((name) => console.log(name));
+names.map((name) => `Hi ${name}`);
 
 This is equivalent to the previous way of _defining_ a function. 
 
@@ -115,7 +136,7 @@ someFunc = () => {
     return 'bacon';
 }
 
-console.log(someFunc());
+console.log(someFunc()); // this will print bacon
 ```
 
 `return` is the end of the line...

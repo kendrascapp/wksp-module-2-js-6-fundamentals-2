@@ -101,13 +101,30 @@ _It's one of the most important parts of this course._
 ---
 
 - What is it?
+<!-- manual testing making sure things work how you want them to in browser etc.
+automated testing  validate that the function is behaving as you expect it to -->
 - Why do we do it?
+<!-- future-proofing your own code -->
 - When do we do it?
+<!-- tests validate what your code is supposed to be doing
+helps isolate functions and pinpoint issues  -->
 
 _Let's talk about test-driven development a little._
-
+start with bugs / tests, and then develop your project
+focused on producing the best code possible 
 ---
 
 ### What is a test?
+<!-- example -->
+function sum(num1, num2) {
+    return num1 + num2;
+}
 
+<!-- a test: you want the test function to actually run the original function -->
+function sumTest(x, y, z) {
+    return sum(x, y) === z;
+}
+
+<!-- test case:  -->
+sumTest(5, 5, 10);
 ---
